@@ -24,18 +24,17 @@ public class Magic {
             List<Data> list = new ArrayList<>();
             for(String line: br.lines().toList()) {
                 String[] data = line.split("\\|");
-                String id = data[6].trim();
-                Data entity = new Data();
-                entity.setId(id);
-
-                String domain = data[3].trim();
                 String state = data[5].trim();
-
                 if (state.equals("0") || state.equals("5") || state.equals("6")){
 
                 }else {
                     continue;
                 }
+                String id = data[6].trim();
+                Data entity = new Data();
+                entity.setId(id);
+
+                String domain = data[3].trim();
 
                 Meta meta = new Meta();
                 meta.setName(domain);
@@ -74,5 +73,3 @@ public class Magic {
         return null;
     }
 }
-
-
